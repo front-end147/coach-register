@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+*:focus {
+  box-shadow: none !important;
+  outline: none;
+}
+
+
+
+.form-container .register-form {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+}
+.form-container .register-form h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.form-container .register-form .tab {
+  display: none;
+}
+.form-container .register-form .tab.active {
+  display: block;
+}
+.form-container .register-form .tab .row:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+.form-container .register-form .tab .row .input-field {
+  position: relative;
+}
+.form-container .register-form .tab .row .input-field label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* color: #0d6efd; */
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.form-container .register-form .tab .row .input-field input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem 0.3rem 2rem;
+  transition: 0.3s ease;
+}
+.form-container .register-form .tab .row .input-field input:focus {
+  border-color: #0d6efd !important;
+}
+.form-container .register-form .tab .row .input-field input:focus + label {
+  color: #0d6efd !important;
+}
+.form-container .register-form select {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  padding: 0.3rem;
+}
+.form-container .register-form .tab .row textarea {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  resize: none;
+  overflow: auto;
+}
+.form-container .register-form .errorText {
+  display: none;
+  font-size: 0.7rem;
+  pointer-events: none;
+}
+.form-container .register-form .errorText.active {
+  display: inline-block;
+}
+.form-container .register-form .tab .row #labelForImg {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+}
+.form-container .register-form .tab .row #labelForImg:before {
+  content: "Upload a Profile Image";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+.form-container .register-form .tab .row #labelForImg:hover:before {
+  opacity: 1;
+}
+.form-container .register-form .tab .row #labelForImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: top;
+}
+.form-container .register-form .tab .row #labelForImg + input {
+  display: none;
+}
+.form-container .register-form .tab .row .overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(255,255,255,0.7);
+}
+.form-container .register-form .tab .row .overlay-content {
+  position: absolute;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  top: 40%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #555;
+}
+.form-container .register-form .tab .row .uploadProcess img{
+  max-width: 207px;
+  border: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  display: inline;
+}
