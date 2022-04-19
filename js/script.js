@@ -11,7 +11,8 @@ const secondPrevBtn = document.getElementById("secondPrevBtn"),
 const submitBtn = document.getElementById("submitBtn");
 // valid
 let valid = true,
-    inputValid = true;
+    inputValid = true,
+    passwordValid = true;
 
 // function to fill the select with years, months, days
 function addingBirthDate() {
@@ -35,7 +36,7 @@ function addingBirthDate() {
 // first next button click
 firstNextBtn.addEventListener("click", (e) => {
   checkPersonalInfo();
-  if (!valid || !inputValid) {
+  if (!valid || !inputValid ||!passwordValid) {
     e.preventDefault();
   }
   else {
@@ -122,11 +123,11 @@ function checkPersonalInfo() {
   if (password.value !== "" && confirmPassword.value !== "") {
     if (password.value !== confirmPassword.value) {
       notMatch.style.display = "block";
-      valid = false;
+      passwordValid = false;
     }
     else {
       notMatch.style.display = "none";
-      valid = true;
+      passwordValid = true;
     }
   }
   // select check
