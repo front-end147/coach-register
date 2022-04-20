@@ -236,7 +236,16 @@ function checkProfileInfo() {
 addingBirthDate();
 
 
-document.getElementById("profilePicture").addEventListener("change", (e) => {
-  submitBtn.setAttribute("name", "submit");
-  document.getElementById("labelForImg").style.pointerEvents = "none";
-})
+const profileImg = document.getElementById("imagePreview"),
+      profileFile = document.getElementById("profilePicture");
+
+profileFile.addEventListener("change", function() {
+  const choosedFile = this.files[0];
+  if (choosedFile) {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+      profileImg.setAttribute("src", reader.result);
+    });
+    reader.readAsDataURL(choosedFile);
+  }
+});
