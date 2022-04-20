@@ -234,3 +234,9 @@ function checkProfileInfo() {
 
 // execute functions
 addingBirthDate();
+
+
+document.getElementById("profilePicture").addEventListener("change", (e) => {
+  submitBtn.setAttribute("name", "submit");
+  document.getElementById("labelForImg").style.pointerEvents = "none";
+})
