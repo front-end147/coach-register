@@ -242,8 +242,10 @@ const profileImg = document.getElementById("imagePreview"),
 profileFile.addEventListener("change", function() {
   const choosedFile = this.files[0];
   if (choosedFile) {
+    // FileReader is a predefined function of JS
     const reader = new FileReader();
     reader.addEventListener("load", () => {
+      // putting result on src of profile picture
       profileImg.setAttribute("src", reader.result);
     });
     reader.readAsDataURL(choosedFile);
