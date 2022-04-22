@@ -236,13 +236,50 @@ function checkProfileInfo() {
 addingBirthDate();
 
 
-const profileImg = document.getElementById("imagePreview"),
-      profileFile = document.getElementById("profilePicture");
+// national id variables
+const nationalFrontFile = document.getElementById("frontNational"),
+      nationalBackFile = document.getElementById("backtNational"),
+      frontDisplay = document.getElementById("frontDisplay"),
+      backDisplay = document.getElementById("backDisplay");
 
-profileFile.addEventListener("change", function() {
+// show front national id when user choosing the image
+nationalFrontFile.addEventListener("change", function () {
+  nationalFrontFile.parentElement.nextElementSibling.nextElementSibling.classList.add("active");
+  // save latest file into choosedFile variable
   const choosedFile = this.files[0];
   if (choosedFile) {
     // FileReader is a predefined function of JS
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+      // change src with result of reader
+      frontDisplay.setAttribute("src", reader.result);
+    });
+    reader.readAsDataURL(choosedFile);
+  }
+});
+// show back national id when user choosing the image
+nationalBackFile.addEventListener("change", function () {
+  nationalBackFile.parentElement.nextElementSibling.nextElementSibling.classList.add("active");
+  const choosedFile = this.files[0];
+  if (choosedFile) {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+      backDisplay.setAttribute("src", reader.result);
+    });
+    reader.readAsDataURL(choosedFile);
+  }
+});
+
+
+
+
+// profile picture variables
+const profileImg = document.getElementById("imagePreview"),
+      profileFile = document.getElementById("profilePicture");
+// profile picture change automatically
+profileFile.addEventListener("change", function() {
+  const choosedFile = this.files[0];
+  if (choosedFile) {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
       // putting result on src of profile picture

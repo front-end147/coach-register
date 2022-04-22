@@ -157,3 +157,18 @@
   border-radius: 0;
   display: inline;
 }
+.form-container .register-form .tab .row .nationalPreview {
+  width: 100%;
+  height: 200px;
+  margin-top: 0.5rem;
+  display: none;
+}
+.form-container .register-form .tab .row .nationalPreview img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.form-container .register-form .tab .row .nationalPreview.active {
+  display: block;
+}
